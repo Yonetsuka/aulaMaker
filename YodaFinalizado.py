@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-# YodaFinalizado.py
-# YodaAssistant consolidado com funcionalidades de screenshot
-# Estende: reconhecimento de voz, TTS, detecção de faces, agenda, data/hora, Groq, YouTube e SCREENSHOTS
-
 import os
 import time
 import json
@@ -499,7 +494,6 @@ class YodaAssistant:
             print(f"✗ Erro ao obter informações: {e}")
             return None
 
-    # ========== FUNÇÕES ORIGINAIS (TTS, ASR, etc.) ==========
 
     def tts_pyttsx3_say(self, msg: str):
         if not msg:
@@ -649,7 +643,6 @@ class YodaAssistant:
 
         texto_lower = texto.lower()
 
-        # ========== NOVOS COMANDOS PARA SCREENSHOTS ==========
         if any(p in texto_lower for p in ["tirar screenshot", "capturar tela", "screenshot", "print", "printar tela"]):
             self.tirar_screenshot()
             return
