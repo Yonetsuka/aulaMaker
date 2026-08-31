@@ -104,7 +104,6 @@ class YodaAssistant:
         self.screenshots_metadata_path = os.path.join(self.screenshots_dir, "metadata.json")
         self.screenshot_counter = self._load_screenshot_metadata()
 
-    # ========== NOVO: FUNÇÕES DE SCREENSHOT ==========
     
     def _load_screenshot_metadata(self):
         """
@@ -166,12 +165,11 @@ class YodaAssistant:
         try:
             self.falar("Capturando tela agora.")
             
-            # Captura a tela usando pyautogui
+
             screenshot = pyautogui.screenshot()
             
             # Define nome do arquivo
             if nome_customizado:
-                # Modo customizado
                 nome_arquivo = f"{nome_customizado}.png"
             else:
                 # Modo sequencial (padrão)
@@ -584,8 +582,6 @@ class YodaAssistant:
         except Exception as e:
             print("Erro no reconhecimento:", e)
             return None
-
-    # ========== RESTO DO CÓDIGO ORIGINAL ==========
     
     def _load_labels(self):
         if os.path.exists(self.labels_path):
@@ -663,7 +659,6 @@ class YodaAssistant:
                 print(f"✓ {msg}")
             return
 
-        # ========== COMANDOS ORIGINAIS ==========
 
         if any(p in texto_lower for p in ["tchau", "adeus", "sair", "encerrar", "pare"]):
             self.falar("Encerrando. Até logo.")
