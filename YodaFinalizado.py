@@ -16,7 +16,6 @@ import pyautogui
 from PIL import Image
 from pathlib import Path
 
-# Groq (opcional)
 try:
     from groq import Groq
     _HAS_GROQ_LIB = True
@@ -24,14 +23,12 @@ except Exception:
     Groq = None
     _HAS_GROQ_LIB = False
 
-# YouTube search (opcional)
 try:
     from yt_search import YouTubeSearch
     _HAS_YT_SEARCH = True
 except Exception:
     _HAS_YT_SEARCH = False
 
-# Detect LBPH availability (requires opencv-contrib-python)
 try:
     _HAS_LBPH = hasattr(cv2, "face") and callable(getattr(cv2.face, "LBPHFaceRecognizer_create", None))
 except Exception:
